@@ -55,11 +55,10 @@ def create_bot_corpus(words, classes, pattern_word_tags_list, ignore_words):
             stem_words = get_stem_words(words, ignore_words)
             
     stem_words = get_stem_words(words, ignore_words) 
-
-    # Remove duplicate words from stem_words
-
-    # sort the stem_words list and classes list
     
+    stem_words = sorted(list(set(stem_words)))
+    classes = sorted(list(set(classes)))
+
     print('stem_words list : ' , stem_words)
 
     return stem_words, classes, pattern_word_tags_list
